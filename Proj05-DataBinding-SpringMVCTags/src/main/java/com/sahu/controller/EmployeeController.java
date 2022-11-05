@@ -14,17 +14,16 @@ public class EmployeeController {
 
 	@GetMapping("/")
 	public String showHome() {
-		return "home";
+		return "index";
 	}
 	
 	@GetMapping("/emp_register")
-	public String showForm() {
+	public String showForm(@ModelAttribute("emp") Employee employee) {
 		return "register";
 	}
 	
 	@PostMapping("/emp_register")
 	public String registerEmployee(Map<String, Object> map, @ModelAttribute("emp") Employee employee) {
-		
 		return "result";
 	}
 	
